@@ -1,8 +1,8 @@
 const express = require("express");
-const app = express(); // main app
 const cookieParser = require("cookie-parser");
 const port = process.env.PORT || 3000;
 
+const app = express(); // main app
 app.use(cookieParser);
 const blog = express(); // blo0g sub App
 app.use("/blog/yasin", blog);
@@ -28,11 +28,11 @@ app.get("/alu/zodu/modu/:id", (req, res) => {
 /*now we are gonna talk about req.body which one we get only in pot  method                                                                          */
 /* -------------------------------------------------------------------------- */
 // for sendnf post request we need to diclier expree.json() before
-app.use(express.json());
-app.post("/apiname", (req, res) => {
-  res.send(req.body); // will give a json object attached from client request
-  //@NOTE : to resiving DATA from client request we need to set content-type application/json is header object
-});
+// app.use(express.json());
+// app.post("/apiname", (req, res) => {
+// res.send(req.body); // will give a json object attached from client request
+//@NOTE : to resiving DATA from client request we need to set content-type application/json is header object
+// });
 /* -------------------------------------------------------------------------- */
 /*                         how sub app work with req.                         */
 /* -------------------------------------------------------------------------- */
@@ -44,6 +44,14 @@ blog.get("/alu/zodu/modu", (req, res) => {
   //res.send(req.hostname); //  'localhost' :: ist same in main app and sub app
 });
 
+// app.get("/aboutmepage", (req, res) => {
+//   res.render("pages/aboutme");
+// });
+
+app.post("/nnn", (req, res) => {
+  res.send("nice game");
+});
+app.set("view engine", "ejs");
 app.listen(port, () => {
   console.log(`listening on ${port}`);
 });
