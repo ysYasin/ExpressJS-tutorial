@@ -10,7 +10,8 @@ const port = process.env.PORT || 4000;
 //   res.send("Hello from modules");
 // });
 
-//@EXPLAINING app.param methods of express
+/* ------------------------------- app.paramm ------------------------------- */
+
 
 // this param will get app thi request url query by name of "id"
 /**app.param("id", (req, res, next, id) => {
@@ -61,17 +62,29 @@ app.patch("about/admin", (req, res) => {
   });
 */
 
-//@EXPLAINING render methods of express
-const fs = require("fs");
-const path = require("path");
-app.set("view engine", "ejs");
+// //@EXPLAINING render methods of express
+// const fs = require("fs");
+// const path = require("path");
+// app.set("view engine", "ejs");
 
-fs.writeFile("views/about/aboutme.ejs", "hello world", (err) => {
-  console.log(err);
-});
-app.get("/aboutme", (req, res) => {
-  res.render("/about/aboutme");
-});
+// fs.writeFile("views/about/aboutme.ejs", "hello world", (err) => {
+//   console.log(err);
+// });
+// app.get("/aboutme", (req, res) => {
+//   res.render("/about/aboutme");
+// });
+
+
+
+
+
+
+
+
+
+
+
+
 
 app.listen(port, () => {
   console.log(`listening on ${port}`);
